@@ -97,3 +97,21 @@ footer .container {
     margin-bottom: 20px;
   }
 }
+
+@media screen and (min-width: 768px) {
+  footer .container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .footer-text {
+    text-align: center;
+  }
+  .footer-adress {
+    margin-bottom: 60px;
+  }
+  .input-user-mail {
+    margin-bottom: 20px;
+    width: 450px;
+  }
+}

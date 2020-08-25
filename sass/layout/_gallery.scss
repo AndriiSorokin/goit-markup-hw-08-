@@ -1,11 +1,16 @@
 .filter {
     display: flex;
     margin-bottom: 34px;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: start;
 }
 
 .filter-list:not(:last-child) {
     margin-right: 8px;
+}
+
+.filter-list:not(:nth-child(n+4)) {
+    margin-bottom: 15px;
 }
 
 .work-link {
@@ -53,13 +58,16 @@
     &:hover,
     &:focus {
         box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-    }
-    &:not(:nth-child(3n)) {
-        margin-right: 30px;
-    }
-    &:not(:nth-child(n+7)) {
-        margin-bottom: 30px;
-    }
+    } //     &:not(:nth-child(3n)) {
+    //         margin-right: 30px;
+    //     }
+    //     &:not(:nth-child(n+7)) {
+    //         margin-bottom: 30px;
+    //     }
+}
+
+.work-list-item:not(:last-child) {
+    margin-bottom: 30px;
 }
 
 .portfolio-overlay {
@@ -91,14 +99,22 @@
     transition: all 0.75s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@media screen and (min-width: 480px) and (max-width:1199px) {
+@media screen and (min-width:768px) {
     .filter {
-        flex-wrap: wrap;
-        width: 317px;
-        flex-wrap: wrap;
-        place-content: flex-start;
+        justify-content: center;
     }
-    .filter-list:not(:nth-child(n+4)) {
-        margin-bottom: 15px;
+    .work-list {
+        display: flex;
+        flex-wrap: wrap;
     }
+    .work-list-item {
+        width: calc((100% - 30px * 1)/ 2);
+    }
+    .work-list-item:not(:nth-child(even)) {
+        margin-right: 30px;
+    }
+}
+
+.work-list-item:nth-child(-n+2) {
+    margin-bottom: 30px;
 }

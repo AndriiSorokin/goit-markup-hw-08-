@@ -9,6 +9,8 @@ body {
 
 img {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 html {
@@ -39,6 +41,7 @@ h3 {
   margin-top: 30px;
   margin-bottom: 10px;
   color: #212121;
+  text-align: center;
 }
 
 a {
@@ -66,10 +69,9 @@ a {
 }
 
 @media screen and (min-width: 480px) {
-  .wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  .section {
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
   .menu-wrapper {
     display: none;
@@ -77,13 +79,14 @@ a {
     top: 95px;
     left: 0;
     background-color: #ffffff;
-    width: 480px;
+    width: 100%;
     flex-direction: column;
     align-items: center;
   }
   .menu-wrapper.is-open {
     display: block;
     display: flex;
+    z-index: 20;
   }
   .auth-nav.list {
     margin-left: 0;
@@ -100,21 +103,14 @@ a {
   }
 }
 
-@media screen and (max-width: 767px) {
-  .section {
-    padding-top: 60px;
-    padding-bottom: 60px;
+@media screen and (min-width: 768px) {
+  .menu-wrapper {
+    display: block;
   }
 }
 
 .container {
-  width: 1200px;
-  margin: 0 auto;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.container {
+  width: 100%;
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -126,11 +122,28 @@ a {
   }
 }
 
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1200px;
+    margin: 0 auto;
+  }
+}
+
 header {
   background-color: #fff;
   padding: 25px 0;
   border-bottom: 1px solid #ECECEC;
-  position: relative;
+}
+
+.menu-wrapper {
+  display: none;
 }
 
 .logo {
@@ -147,6 +160,7 @@ header .logo {
   font-family: Raleway;
   font-weight: bold;
   font-size: 26px;
+  margin-right: auto;
 }
 
 .logo span {
@@ -238,8 +252,7 @@ nav {
   top: 121px;
   left: 50%;
   transform: translateX(-50%);
-  width: 528px;
-  height: 598px;
+  width: 100%;
   background-color: #fff;
   padding: 40px;
   border-radius: 4px;
@@ -269,7 +282,7 @@ nav {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   font-size: 14px;
-  width: 448px;
+  width: 100%;
   height: 120px;
   resize: none;
   padding-top: 15px;
@@ -314,6 +327,12 @@ nav {
 @media screen and (min-width: 480px) and (max-width: 1199px) {
   .checkbox-label {
     font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .form-wrapper {
+    width: 450px;
   }
 }
 
@@ -390,6 +409,9 @@ nav {
   border: 1px solid #212121;
   border-radius: 4px;
   margin-right: 8px;
+  align-items: center;
+  font-size: 10px;
+  text-align: center;
 }
 
 .checkbox-link {
@@ -455,14 +477,26 @@ nav {
   background-repeat: no-repeat;
 }
 
+@media screen and (min-width: 1200px) {
+  .checkbox-label {
+    font-size: 12px;
+    align-items: center;
+  }
+}
+
 .filter {
   display: flex;
   margin-bottom: 34px;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: start;
 }
 
 .filter-list:not(:last-child) {
   margin-right: 8px;
+}
+
+.filter-list:not(:nth-child(n+4)) {
+  margin-bottom: 15px;
 }
 
 .work-link {
@@ -516,11 +550,7 @@ nav {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-.work-list-item:not(:nth-child(3n)) {
-  margin-right: 30px;
-}
-
-.work-list-item:not(:nth-child(n+7)) {
+.work-list-item:not(:last-child) {
   margin-bottom: 30px;
 }
 
@@ -553,16 +583,24 @@ nav {
   transition: all 0.75s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@media screen and (min-width: 480px) and (max-width: 1199px) {
+@media screen and (min-width: 768px) {
   .filter {
-    flex-wrap: wrap;
-    width: 317px;
-    flex-wrap: wrap;
-    place-content: flex-start;
+    justify-content: center;
   }
-  .filter-list:not(:nth-child(n+4)) {
-    margin-bottom: 15px;
+  .work-list {
+    display: flex;
+    flex-wrap: wrap;
   }
+  .work-list-item {
+    width: calc((100% - 30px * 1)/ 2);
+  }
+  .work-list-item:not(:nth-child(even)) {
+    margin-right: 30px;
+  }
+}
+
+.work-list-item:nth-child(-n+2) {
+  margin-bottom: 30px;
 }
 
 .btn {
@@ -594,7 +632,7 @@ nav {
   font-family: Roboto;
   font-weight: 500;
   font-size: 16px;
-  padding: 6px 12px;
+  padding: 6px 22px;
   border-radius: 6px;
   border: none;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -725,6 +763,24 @@ footer .container {
   .input-user-mail {
     width: 100%;
     margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  footer .container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .footer-text {
+    text-align: center;
+  }
+  .footer-adress {
+    margin-bottom: 60px;
+  }
+  .input-user-mail {
+    margin-bottom: 20px;
+    width: 450px;
   }
 }
 /*# sourceMappingURL=portfolio.css.map */

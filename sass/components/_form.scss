@@ -66,6 +66,9 @@
         border: 1px solid #212121;
         border-radius: 4px;
         margin-right: 8px;
+        align-items: center;
+        font-size: 10px;
+        text-align: center;
     }
 }
 
@@ -137,4 +140,11 @@
     margin-left: 8px;
     background-image: url(../images/telegram.svg);
     background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 1200px) {
+    .checkbox-label {
+        font-size: 12px;
+        align-items: center;
+    }
 }

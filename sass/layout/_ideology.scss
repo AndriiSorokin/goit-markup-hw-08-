@@ -1,5 +1,5 @@
 .ideology {
-    padding-bottom: 0;
+    padding-bottom: 60px;
     &-text {
         font-weight: normal;
         line-height: 1.715em;
@@ -18,8 +18,7 @@
     &-item::before {
         display: block;
         content: "";
-        height: 120px;
-        width: 100%;
+        height: 120px; // width: 100%;
         background-color: #F5F4FA;
         background-repeat: no-repeat;
         background-position: center;
@@ -42,14 +41,37 @@
     background-image: url(../images/astronaut.svg);
 }
 
+.ideology-item:not(:last-child) {
+    margin-bottom: 30px;
+}
+
 @media screen and (min-width:480px) {
     .ideology-item h3 {
         text-align: center;
     }
 }
 
-@media screen and (max-width: 767px) {
-    .ideology-text {
-        margin-bottom: 60px;
+@media screen and (min-width: 768px) {
+    .ideology-list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .ideology-item {
+        width: calc((100% - 30px * 1)/ 2);
+    }
+    .ideology-item:not(:nth-child(even)) {
+        margin-right: 30px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .ideology-item {
+        width: 270px;
+    }
+    .ideology-item:not(:last-child) {
+        margin-right: 30px;
+    }
+    .ideology-item h3 {
+        text-align: start;
     }
 }
