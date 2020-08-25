@@ -1,0 +1,55 @@
+.ideology {
+    padding-bottom: 0;
+    &-text {
+        font-weight: normal;
+        line-height: 1.715em;
+        letter-spacing: 0.04em;
+    } // &-list {
+    //     display: flex;
+    // }
+    // &-item {
+    //     width: 270px;
+    //     margin-right: 30px;
+    //     flex-wrap: wrap;
+    // }
+    &-item:last-child {
+        margin-right: 0px;
+    }
+    &-item::before {
+        display: block;
+        content: "";
+        height: 120px;
+        width: 100%;
+        background-color: #F5F4FA;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+.antena::before {
+    background-image: url(../images/antenna.svg);
+}
+
+.clock::before {
+    background-image: url(../images/clock.svg);
+}
+
+.diagramm::before {
+    background-image: url(../images/diagramm.svg);
+}
+
+.cosmonaut::before {
+    background-image: url(../images/astronaut.svg);
+}
+
+@media screen and (min-width:480px) {
+    .ideology-item h3 {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .ideology-text {
+        margin-bottom: 60px;
+    }
+}
