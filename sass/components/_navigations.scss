@@ -12,7 +12,7 @@ nav {
     }
     &-item a {
         position: relative;
-        padding-bottom: 32px;
+        padding-bottom: 34px;
     }
     &.link:hover,
     &.link:focus {
@@ -51,15 +51,27 @@ nav {
     }
 }
 
-@media screen and (min-width: 480px) {
-    .site-nav {
-        max-width: 480px;
-        ;
-    }
-    .auth-nav {
-        max-width: 480px;
-    }
+@media screen and (max-width: 767px) {
+    // .site-nav {
+    //     max-width: 480px;
+    //     ;
+    // }
+    // .auth-nav {
+    //     max-width: 480px;
+    // }
     .site-nav-item a {
         padding-bottom: 8px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+    .site-nav-item a {
+        padding-bottom: 44px;
+    }
+}
+
+@media screen and (min-width :1200px) {
+    .site-nav-item a {
+        padding-bottom: 32px;
     }
 }

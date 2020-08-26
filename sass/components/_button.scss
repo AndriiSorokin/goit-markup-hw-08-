@@ -63,3 +63,9 @@
     display: none;
   }
 }
+
+@media screen and (min-width: 1200px) {
+  .telegram {
+    margin-right: 0;
+  }
+}

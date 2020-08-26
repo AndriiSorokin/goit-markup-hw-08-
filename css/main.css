@@ -35,9 +35,9 @@ p {
 }
 
 h3 {
-  font-size: 14px;
-  text-transform: uppercase;
+  font-size: 16px;
   letter-spacing: 0.03em;
+  font-weight: 400;
   margin-top: 30px;
   margin-bottom: 10px;
   color: #212121;
@@ -68,7 +68,7 @@ a {
   color: #212121;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 767px) {
   .section {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -109,6 +109,39 @@ a {
   }
 }
 
+@media screen and (min-width: 768px) {
+  .wrapper {
+    justify-content: space-between;
+  }
+  .menu-wrapper {
+    display: flex;
+  }
+  .site-nav {
+    display: flex;
+  }
+  .auth-nav.list {
+    margin-left: 84px;
+  }
+  .site-nav-item {
+    margin-right: 50px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .auth-nav {
+    display: flex;
+  }
+  .auth-nav-item:not(:last-child) {
+    margin-right: 30px;
+  }
+  .auth-nav.list {
+    margin-left: 40px;
+  }
+  nav {
+    margin-right: 250px;
+  }
+}
+
 .container {
   width: 100%;
   padding-left: 15px;
@@ -142,10 +175,6 @@ header {
   border-bottom: 1px solid #ECECEC;
 }
 
-.menu-wrapper {
-  display: none;
-}
-
 .logo {
   margin-right: 93px;
   font-family: Raleway;
@@ -160,11 +189,16 @@ header .logo {
   font-family: Raleway;
   font-weight: bold;
   font-size: 26px;
-  margin-right: auto;
 }
 
 .logo span {
   color: #2196F3;
+}
+
+@media screen and (max-width: 767px) {
+  header .logo {
+    margin-right: auto;
+  }
 }
 
 nav {
@@ -180,7 +214,7 @@ nav {
 
 .site-nav-item a {
   position: relative;
-  padding-bottom: 32px;
+  padding-bottom: 34px;
 }
 
 .site-nav.link:hover, .site-nav.link:focus {
@@ -220,15 +254,21 @@ nav {
   color: #2196F3;
 }
 
-@media screen and (min-width: 480px) {
-  .site-nav {
-    max-width: 480px;
-  }
-  .auth-nav {
-    max-width: 480px;
-  }
+@media screen and (max-width: 767px) {
   .site-nav-item a {
     padding-bottom: 8px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .site-nav-item a {
+    padding-bottom: 44px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .site-nav-item a {
+    padding-bottom: 32px;
   }
 }
 
@@ -484,6 +524,12 @@ nav {
   fill: currentColor;
 }
 
+@media screen and (max-width: 1199px) {
+  .adress-link {
+    margin-bottom: 10px;
+  }
+}
+
 .hero {
   background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/header-mobile.jpg);
   background-repeat: no-repeat;
@@ -511,7 +557,7 @@ nav {
   text-transform: uppercase;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1199px) {
   .hero-title {
     font-size: 26px;
     font-weight: 600;
@@ -598,6 +644,12 @@ nav {
   }
 }
 
+@media screen and (min-width: 1200px) {
+  .telegram {
+    margin-right: 0;
+  }
+}
+
 .affair {
   display: none;
 }
@@ -622,7 +674,7 @@ nav {
     left: 0;
     bottom: 0;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 14px;
     color: #fff;
     letter-spacing: 0.03em;
     text-transform: uppercase;
@@ -744,6 +796,9 @@ nav {
 }
 
 @media screen and (max-width: 767px) {
+  .team-list {
+    padding-bottom: 15px;
+  }
   .team-list:not(:last-child) {
     margin-bottom: 30px;
   }
@@ -755,6 +810,7 @@ nav {
     flex-wrap: wrap;
   }
   .team-list {
+    padding-bottom: 15px;
     width: calc((100% - 30px * 1)/ 2);
   }
   .team-list:not(:nth-child(even)) {
@@ -981,21 +1037,52 @@ footer .container {
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   footer .container {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
   }
+  .footer-link .footer-text {
+    text-align: center;
+  }
   .footer-text {
     text-align: center;
   }
-  .footer-adress {
-    margin-bottom: 60px;
+  .logo {
+    margin-right: 0;
   }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .input-user-mail {
     margin-bottom: 20px;
     width: 450px;
+  }
+  .footer-adress {
+    margin-bottom: 60px;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  footer .container {
+    display: flex;
+  }
+  .footer-adress {
+    width: 231px;
+    margin-right: auto;
+  }
+  .footer-link {
+    width: 206px;
+    margin-right: 68px;
+  }
+  .form-footer {
+    width: 570px;
+    display: flex;
+  }
+  .input-user-mail {
+    width: 350px;
   }
 }
 /*# sourceMappingURL=main.css.map */

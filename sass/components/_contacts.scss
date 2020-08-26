@@ -19,3 +19,9 @@
 .adress-link:hover svg {
     fill: currentColor;
 }
+
+@media screen and (max-width: 1199px) {
+    .adress-link {
+        margin-bottom: 10px;
+    }
+}

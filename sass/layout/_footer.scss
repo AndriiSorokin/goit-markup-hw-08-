@@ -98,20 +98,51 @@ footer .container {
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   footer .container {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
   }
+  .footer-link .footer-text {
+    text-align: center;
+  }
   .footer-text {
     text-align: center;
   }
-  .footer-adress {
-    margin-bottom: 60px;
+  .logo {
+    margin-right: 0;
   }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .input-user-mail {
     margin-bottom: 20px;
     width: 450px;
+  }
+  .footer-adress {
+    margin-bottom: 60px;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  footer .container {
+    display: flex;
+  }
+  .footer-adress {
+    width: 231px;
+    margin-right: auto;
+  }
+  .footer-link {
+    width: 206px;
+    margin-right: 68px;
+  }
+  .form-footer {
+    width: 570px;
+    display: flex;
+  }
+  .input-user-mail {
+    width: 350px;
   }
 }

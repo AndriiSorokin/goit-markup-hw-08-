@@ -30,6 +30,9 @@
 }
 
 @media screen and (max-width: 767px) {
+  .team-list {
+    padding-bottom: 15px;
+  }
   .team-list:not(:last-child) {
     margin-bottom: 30px;
   }
@@ -41,6 +44,7 @@
     flex-wrap: wrap;
   }
   .team-list {
+    padding-bottom: 15px;
     width: calc((100% - 30px * 1)/ 2);
   }
   .team-list:not(:nth-child(even)) {

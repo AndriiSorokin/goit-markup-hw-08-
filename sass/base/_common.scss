@@ -35,9 +35,9 @@ p {
 }
 
 h3 {
-    font-size: 14px;
-    text-transform: uppercase;
+    font-size: 16px;
     letter-spacing: 0.03em;
+    font-weight: 400;
     margin-top: 30px;
     margin-bottom: 10px;
     color: $second-text-color;
@@ -68,7 +68,7 @@ a {
     color: $second-text-color;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 767px) {
     // .wrapper {
     //     display: flex;
     //     justify-content: space-between;
@@ -111,5 +111,38 @@ a {
 @media screen and (min-width: 768px) {
     .menu-wrapper {
         display: block;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .wrapper {
+        justify-content: space-between;
+    }
+    .menu-wrapper {
+        display: flex;
+    }
+    .site-nav {
+        display: flex;
+    }
+    .auth-nav.list {
+        margin-left: 84px;
+    }
+    .site-nav-item {
+        margin-right: 50px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .auth-nav {
+        display: flex;
+    }
+    .auth-nav-item:not(:last-child) {
+        margin-right: 30px;
+    }
+    .auth-nav.list {
+        margin-left: 40px;
+    }
+    nav {
+        margin-right: 250px;
     }
 }
